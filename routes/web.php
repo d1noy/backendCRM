@@ -1,9 +1,17 @@
 <?php
 
+use App\Http\Controllers\Api\MockPaymentController;
 use App\Http\Controllers\Panel\AuthController;
 use App\Http\Controllers\Panel\CategoryController;
+use App\Http\Controllers\Panel\OrderController;
+use App\Http\Controllers\Panel\PaymentController;
 use App\Http\Controllers\Panel\ProductController;
 use Illuminate\Support\Facades\Route;
+
+
+Route::get('/pay/{payment}', [PaymentController::class, 'showForm'])->name('payments.mock-pay-form');
+Route::post('/pay/{payment}', [PaymentController::class, 'pay'])->name('payments.mock-pay-submit');
+Route::get('/pay/success', fn () => 'Оплата прошла успешно')->name('mock-pay-success');
 
 Route::prefix('admin')->group(function () {
     Route::get('/login', [AuthController::class, 'login'])->name('login');
@@ -29,6 +37,9 @@ Route::prefix('admin')->group(function () {
         Route::post('/products/{product}/edit', [ProductController::class, 'update'])->name('products.update');
         Route::get('/products/{product}/destroy', [ProductController::class, 'destroy'])->name('products.destroy');
         Route::get('/products/', [ProductController::class, 'list'])->name('products.list');
+        Route::get('/orders', OrderController::class)->name('orders');
+
+
 
     });
 

@@ -8,11 +8,6 @@
    Modern Admin UI
 =========================== */
 
-@font-face {
-    font-family: "Montserrat";
-    src: url("../fonts/Montserrat-Regular.ttf");
-}
-
 :root {
     --primary: #4f46e5;
     --primary-hover: #4338ca;
@@ -1427,4 +1422,257 @@ h1,h2,h3,h4{
 
 .pagination .disabled span {
     opacity: .4;
+}
+
+.form-container {
+    min-height: 100vh;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.form-container .card {
+    width: 100%;
+    max-width: 440px;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-lg);
+
+    background: var(--white);
+    overflow: hidden;
+}
+
+.form-container .card-body {
+    padding: 48px 40px;
+}
+
+.form-container h2 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    color: var(--text);
+    font-size: 28px !important;
+}
+
+.form-container .form-label {
+    font-weight: 600;
+    color: var(--text);
+    font-size: 15px !important;
+    margin-bottom: 8px;
+}
+
+.form-container .form-control {
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px !important;
+
+    padding: 14px 16px;
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+
+    background: var(--background);
+    color: var(--text);
+
+    transition: var(--transition);
+}
+
+.form-container .form-control::placeholder {
+    color: var(--text-light);
+}
+
+.form-container .form-control:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: var(--white);
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.12);
+}
+
+.form-container .form-control.is-invalid {
+    border-color: var(--danger);
+    background: var(--white);
+}
+
+.form-container .form-control.is-invalid:focus {
+    box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.12);
+}
+
+.form-container .invalid-feedback {
+    font-size: 13px !important;
+    color: var(--danger);
+    margin-top: 6px;
+}
+
+/* Error alert */
+.form-container .alert-danger {
+    font-size: 14px !important;
+    font-weight: 500;
+
+    border: none;
+    border-radius: 12px;
+
+    background: rgba(239, 68, 68, 0.08);
+    color: var(--danger);
+
+    padding: 14px 16px;
+    margin-bottom: 24px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Submit button */
+.form-container .btn-primary {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 16px !important;
+
+    background: var(--primary);
+    border: none;
+    border-radius: 12px;
+
+    padding: 14px;
+
+    box-shadow: var(--shadow-sm);
+}
+
+.form-container .btn-primary:hover {
+    background: var(--primary-hover);
+    box-shadow: var(--shadow);
+    transform: translateY(-1px);
+}
+
+.form-container .btn-primary:active {
+    transform: translateY(0);
+}
+
+/* ===========================
+   Mock Payment Form
+=========================== */
+
+.pay-card {
+    max-width: 480px;
+}
+
+.pay-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--success);
+
+    background: rgba(34, 197, 94, 0.1);
+    border-radius: 999px;
+    padding: 6px 14px;
+
+    margin-bottom: 20px;
+}
+
+.pay-order-id {
+    font-size: 13px !important;
+    color: var(--text-light);
+    margin-bottom: 24px;
+    font-family: monospace;
+}
+
+.pay-amount {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background: var(--background);
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 28px;
+}
+
+.pay-amount-label {
+    font-size: 13px;
+    color: var(--text-light);
+    margin-bottom: 4px;
+}
+
+.pay-amount-value {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.pay-hint {
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-light);
+    margin-top: 12px;
+}
+
+.pay-result-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 32px;
+    font-weight: 700;
+
+    margin: 0 auto 20px;
+}
+
+.pay-result-success {
+    background: rgba(34, 197, 94, 0.12);
+    color: var(--success);
+}
+
+.pay-result-failed {
+    background: rgba(239, 68, 68, 0.12);
+    color: var(--danger);
+}
+
+/* ===========================
+   Order status
+=========================== */
+
+.status-badge{
+
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    padding:8px 14px;
+
+    border-radius:999px;
+
+    font-size:14px;
+    font-weight:600;
+
+}
+
+.status-badge i{
+
+    font-size:15px;
+
+}
+
+.status-badge.pending{
+
+    background:#fef3c7;
+    color:#b45309;
+
+}
+
+.status-badge.success{
+
+    background:#dcfce7;
+    color:#15803d;
+
+}
+
+.status-badge.failed{
+
+    background:#fee2e2;
+    color:#dc2626;
+
 }

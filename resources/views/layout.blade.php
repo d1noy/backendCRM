@@ -25,23 +25,11 @@
                 </div>
                 @auth
                 <nav>
-                    <a href="{{route('home')}}">
-                        <i class="bi bi-grid"></i>
-                        Categories
-                    </a>
-                    <a href="{{route('products.list')}}">
-                        <i class="bi bi-bag"></i>
-                        Goods
-                    </a>
-                    <a href="#">
-                        <i class="bi bi-receipt"></i>
-                        Orders
-                    </a>
-                </nav>
-                <a href="{{route('logout')}}" class="logout">
-                    <i class="bi bi-box-arrow-right"></i>Logout</a>
+                    <a href="{{route('home')}}"><i class="bi bi-grid"></i>Categories</a>
+                    <a href="{{route('products.list')}}"><i class="bi bi-bag"></i>Goods</a>
+                    <a href="{{{route('orders')}}}"><i class="bi bi-receipt"></i>Orders</a></nav>
+                <a href="{{route('logout')}}" class="logout"><i class="bi bi-box-arrow-right"></i>Logout</a>
                 @endauth
-
                 @guest
                 <a href="{{route('login')}}" class="login-btn">Login</a>
                 @endguest
@@ -49,9 +37,7 @@
         </div>
     </header>
     <main class="page">
-
         @yield('content')
-
     </main>
 </body>
 
